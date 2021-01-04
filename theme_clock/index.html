@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <title>Clock</title>
+</head>
+<body>
+  
+  <!-- Inspired by this dribbble shot https://dribbble.com/shots/5958443-Alarm-clock -->
+
+  <!-- <button class="toggle-themes">Light mode</button> -->
+  <!-- Rounded switch -->
+  <label class="theme-switch" for="js-theme-switch-checkbox">
+    <span class="theme-switch__text">Light</span>
+    <input id="js-theme-switch-checkbox" class="theme-switch__checkbox" type="checkbox" name="theme-switch-checkbox">
+    <span class="theme-switch__slider"></span>
+  </label>
+
+  <div class="clock">
+    <div class="clock__face">
+      <div class="face__needle face__hour"></div>
+      <div class="face__needle face__minute"></div>
+      <div class="face__needle face__second"></div>
+      <div class="face__center-point"></div>
+    </div>
+
+    <div class="clock__time"></div>
+    <div class="clock__date"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+:root{
+  --c-alpha: #242424;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  background-color: var(--c-alpha);
+  color: #fff;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.paint-squares{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.paint-squares__square{
+  width: 1rem;
+  height: 1rem;
+  /* box-shadow: 0 0 30px rgba(0,0,0,0.12); */
+  box-shadow: 0 0 2px #000;
+  background: var(--c-alpha);
+  transition: background-color 2s ease;
+}
+
+.paint-squares__square:hover{
+  transition-duration: 0s;
+}

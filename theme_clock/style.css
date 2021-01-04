@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;900&display=swap');
+
+:root{
+  --c-alpha: #3498db;
+  --c-light: #e5e5e5;
+  --c-dark: #6a6a6a;
+  --c-dark-2: #333;
+  --c-dark-3: #121212;
+}
+
+html.light{
+  --c-light: #121212;
+  --c-dark-3: #e5e5e5;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  background-color:var(--c-dark-3);
+  color: var(--c-light);
+  min-height: 100%;
+  max-width: 100%;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.clock{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.clock__face{
+  position: relative;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin-bottom: 1rem;
+}
+
+.face__needle{
+  background-color: var(--c-light);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 4.0625rem;
+  width: 0.1875rem;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-in, background-color 0.5s ease-in;
+}
+
+.face__hour{
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.face__minute{
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 6.25rem;
+}
+
+.face__second{
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 6.25rem;
+  background-color: #e74c3c;
+}
+
+.face__center-point{
+  background-color: #e74c3c;
+  width: 0.625rem;
+  height: 0.625rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.face__center-point::after{
+  content: '';
+  background-color: var(--c-light);
+  width: 0.3125rem;
+  height: 0.3125rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock__time{
+  font-size: 3.75rem;
+}
+
+.time__ampm{
+  font-size: 1.8rem;
+  padding-left: 0.4rem;
+  font-weight: 300;
+}
+
+.clock__date{
+  color: #aaa;
+  font-size: 0.875rem;
+  letter-spacing: 0.01875rem;
+  text-transform: uppercase;
+}
+
+.date__num{
+  font-weight: 900;
+}
+
+/* Slider switch */
+.theme-switch {
+  width: 3.75rem;
+  height: 2.125rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0.3;
+  cursor: pointer;
+  animation-name: oneThirdFadeOut;
+  animation-duration: 3s;
+  transition: opacity 0.3s ease-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch:focus{
+  outline: none;
+}
+
+.theme-switch:hover{
+  opacity: 1;
+}
+
+.theme-switch__text{
+  position: absolute;
+  top: 50%;
+  left: -2.9rem;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+  transition: opacity 0.3s ease-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.theme-switch:hover .theme-switch__text{
+  opacity: 1;
+}
+
+.theme-switch__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2.125rem;
+  background-color: var(--c-dark);
+  cursor: pointer;
+}
+
+.theme-switch__slider:before {
+  content: '';
+  height: 1.625rem;
+  width: 1.625rem;
+  position: absolute;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  transition: transform 0.2s ease-in, background-color 0.4s ease-in;
+}
+
+.theme-switch__checkbox:checked + .theme-switch__slider {
+  background-color: var(--c-light);
+}
+
+.theme-switch__checkbox:focus + .theme-switch__slider {
+  box-shadow: 0 0 0.0625rem var(--c-light);
+}
+
+.theme-switch__checkbox:checked + .theme-switch__slider:before {
+  transform: translateX(1.625rem);
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1}
+  80%{opacity: 1}
+  100% {opacity: 0}
+}
+
+@keyframes oneThirdFadeOut {
+  0% {opacity: 1}
+  80%{opacity: 1}
+  100% {opacity: 0.3}
+}

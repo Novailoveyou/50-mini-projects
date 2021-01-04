@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  background-color:#333;
+  color: #fff;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container{
+  display: flex;
+  width: 90vw;
+}
+
+.panel{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 3.125rem;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.panel__title{
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active{
+  flex: 5;
+}
+
+.panel.active .panel__title{
+  opacity: 1;
+}
+
+@media(max-width: 480px){
+  .container{
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    display: none;
+  }
+}
+
+.bg--1{
+  background-image: url('darkterror.jpg');
+  background-position: 60%;
+}
+
+.bg--2{
+  background-image: url('nevermore.jpg');
+  background-position: 41%;
+}
+
+.bg--3{
+  background-image: url('leviathan.jpg');
+}
+
+.bg--4{
+  background-image: url('kaolin.jpg');
+}
+
+.bg--5{
+  background-image: url('holy-knight.jpg');
+  background-position: 56%;
+}
